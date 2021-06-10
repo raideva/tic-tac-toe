@@ -1,3 +1,9 @@
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
+
 #game_pg{
   background-image: url(bg.png);
   background-repeat: no-repeat;
@@ -12,6 +18,7 @@
 }
 
 .login{
+  margin-top: 10%;
     display: block;
     background-color: floralwhite;
    
