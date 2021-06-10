@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-tac-toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="game_pg" >
+    <h1 style="color: rgba(37, 80, 82, 0.404); text-align: center;" id="titl"> Tic Tac Toe </h1>
+    <div class="login">
+        <div class="mode">
+          <label style="margin-left: 5%;"> Name - </label>
+          
+          <input type="text" id="name">
+        </div>
+        
+  
+        <div class="mode" id="md">
+          <label> Mode you want to play - </label>
+          <br>
+          <br>
+          <button style="margin-left: 10%;margin-right: 30%; width: 25%;" onclick="oneplayer()">One player</button>
+          <button style="width: 25%;" onclick="twoplayer()">Two player</button>
+        </div>
+     
+        <div class="mode" style="display: none;" id="symb">
+          <label> Symbool you want to use - </label>
+          <br>
+          <br>
+          <button style="margin-left: 10%;margin-right: 30%; width: 25%;" onclick="cross()">X</button>
+          <button style="width: 25%;" onclick="zero()">O</button>
+        </div>
+         
+
+        <div class="mode" style="display: none;" id="firs_move">
+          <label> Who you want to move first - </label>
+          <br>
+          <br>
+          <button style="margin-left: 10%;margin-right: 30%; width: 25%;" onclick="player()">You</button>
+          <button style="width: 25%;" onclick="comp()">Computer</button>
+        </div>
+    
+        <button id="subm" style="display: none;" onclick="play()">Play</button>
+          
+  </div>
+
+
+    
+
+</body>
+</html>
+
+<script src="main.js"></script>

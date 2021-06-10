@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-tac-toe</title>
+    <link rel="stylesheet" href="tic.css">
+</head>
+<body id="game_pg" >
+    <h1 id="titl"> Tic Tac Toe </h1>
+
+    <h2 id="name" class="tag"></h2>
+
+    <h2 id="score1" class="tag" style="text-align: left; "></h2>
+    <h2 id="score2" class="tag" style="text-align: left; "></h2>
+
+   <div id="game" style="visibility: visible;">
+   <button id="a1" class="btn" style="border-top: none; border-left: none;" onclick="cl(1)"> </button>
+   <button id="a2" class="btn" style="border-top: none; " onclick="cl(2)"> </button>
+   <button id="a3" class="btn" style="border-top: none; border-right: none;" onclick="cl(3)"> </button>
+   <br>
+   <button id="a4" class="btn" style="border-left: none;" onclick="cl(4)"> </button>
+   <button id="a5" class="btn" onclick="cl(5)"> </button>
+   <button id="a6" class="btn" style="border-right: none;" onclick="cl(6)"> </button>
+   <br>
+   <button id="a7" class="btn" style="border-bottom: none; border-left: none;" onclick="cl(7)"> </button>
+   <button id="a8" class="btn" style="border-bottom: none;" onclick="cl(8)"> </button>
+   <button id="a9" class="btn" style="border-bottom: none; border-right: none;" onclick="cl(9)"> </button> 
+   </div>
+   
+   <h2 id="res" class="tag">  </h2>
+
+   <button class="buts" style="width: 100px; height: 50px; background-color: crimson; border: none; margin-bottom: 20px;" onclick="document.location = 'index.html'">Exit</button>
+
+   <button class="buts" id="but" style="display: none;" onclick="play()">Play Again</button>
+
+</body>
+</html>
+
+<script src="tac.js"></script>
