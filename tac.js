@@ -24,11 +24,15 @@ return;
 document.getElementById("name").innerHTML = "Welcome " + na + " !";
 display_score();
 
-if(type == 2){
-    s_change();
-    document.getElementById("a" + 5).innerHTML = symbol;
-    arr[4] = symbol;
-    s_change();
+firs_move();
+
+function firs_move(){
+    if(type == 2){
+        s_change();
+        document.getElementById("a" + 5).innerHTML = symbol;
+        arr[4] = symbol;
+        s_change();
+    }
 }
 
 function cl(x){
@@ -36,7 +40,8 @@ function cl(x){
     return;
     document.getElementById("a" + x).innerHTML = symbol;
     arr[x -1] = symbol;
-    game_over();
+    if(game_over() == 1)
+    return;
     s_change();
     if(type != 3)
     {comp_move();
@@ -88,6 +93,37 @@ function is_correct(){
     return 0;
 }
 
+function special_move(){
+    console.log(arr);
+     count = 0;
+     for(let i = 0; i < 9; i++){
+         if(arr[i] != " ")
+         count++;
+     }
+
+     if(count == 3){
+         if(arr[1] != " " && arr[5] != " "){
+            document.getElementById("a" + 3).innerHTML = symbol;
+            arr[2] = symbol;
+            s_change();
+            return 1;
+         }
+         if(arr[3] != " " && arr[7] != " "){
+            document.getElementById("a" + 7).innerHTML = symbol;
+            arr[6] = symbol;
+            s_change();
+            return 1;
+         }
+         if(arr[7] != " " && arr[5] != " "){
+            document.getElementById("a" + 9).innerHTML = symbol;
+            arr[8] = symbol;
+            s_change();
+            return 1;
+         }
+     }
+     return 0;
+}
+
 
 function comp_move(){
      if(arr[4] == " "){
@@ -97,6 +133,11 @@ function comp_move(){
          return;
      }
      
+     if(special_move() == 1)
+     {
+         console.log(arr);
+     return;}
+
      for(let i = 0; i < 9; i++){
          if(arr[i] != " ")
          continue;
@@ -155,18 +196,18 @@ function game_over(){
     if(check(arr) != 0)
     {document.getElementById("game").style.display = "none";
     display_result(check(arr));
-    return;}
+    return 1;}
 
     
     for(let i = 0; i < 9; i++){
         if(arr[i] == " ")
-        return;
+        return 0;
     }
 
     document.getElementById("game").style.display = "none";
     var ch = "U";
     display_result(ch);
-    return;
+    return 1;
 }
 
 function display_result(a){
@@ -189,13 +230,14 @@ function display_result(a){
 }
 
 function play(){
-    console.log("hello");
     for(let i = 0; i < 9; i++){
         document.getElementById("a" + (i + 1)).innerHTML = " ";
         arr[i] = " ";
     }
     document.getElementById("game").style.display = "block";
     document.getElementById("but").style.display = "none";
+    symbol = localStorage.symbol;
+    firs_move();
 }
 
 
